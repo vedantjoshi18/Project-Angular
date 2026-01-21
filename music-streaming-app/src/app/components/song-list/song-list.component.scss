@@ -1,0 +1,106 @@
+@use '@angular/material' as mat;
+
+:host {
+    display: block;
+}
+
+.filter-container {
+    margin-bottom: 2rem;
+
+    mat-form-field {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+.song-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    perspective: 1000px;
+}
+
+.song-card {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background: var(--surface);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+        transform: translateY(-4px) scale(1.01);
+        background: var(--surface-hover);
+        box-shadow: var(--shadow-lg);
+        border-color: rgba(167, 139, 250, 0.3); // Primary color hint
+    }
+
+    &.playing {
+        border-color: var(--secondary);
+        background: rgba(45, 212, 191, 0.05);
+
+        .equalizer-icon {
+            color: var(--secondary);
+            animation: pulse 2s infinite;
+        }
+    }
+}
+
+.song-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+
+    mat-icon {
+        font-size: 24px;
+        width: 24px;
+        height: 24px;
+        color: var(--primary);
+    }
+}
+
+.song-info {
+    flex: 1;
+
+    h3 {
+        margin: 0 0 4px 0;
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    p {
+        margin: 0;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+    }
+}
+
+.song-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--text-muted);
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.6;
+    }
+}

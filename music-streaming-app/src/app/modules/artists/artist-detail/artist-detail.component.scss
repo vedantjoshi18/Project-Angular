@@ -1,0 +1,17 @@
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+
+    .avatar {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 30px;
+    }
+}
+
+.artist-detail {
+    padding: 20px;
+}

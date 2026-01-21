@@ -1,0 +1,37 @@
+<div class="player-container" *ngIf="currentSong; else noSong">
+    <div class="player-card">
+        <div class="album-art-container" [class.playing]="state?.playing">
+            <img [src]="currentSong.coverUrl" alt="Album Art" appAlbumAnimate>
+        </div>
+
+        <div class="song-info">
+            <h2>{{ currentSong.title }}</h2>
+            <p>{{ artists.get(currentSong.artistId) || 'Unknown Artist' }}</p>
+        </div>
+
+        <div class="controls">
+            <button mat-fab color="primary" (click)="togglePlay()">
+                <mat-icon>{{ state?.playing ? 'pause' : 'play_arrow' }}</mat-icon>
+            </button>
+        </div>
+
+        <div class="slider-container">
+            <span>{{ state?.currentTime | date:'mm:ss' }}</span>
+            <mat-slider min="0" [max]="currentSong.duration" step="1" color="accent">
+                <input matSliderThumb [value]="state?.currentTime" (dragEnd)="onSliderChangeEnd($event)">
+            </mat-slider>
+            <span>{{ currentSong.duration | date:'mm:ss' }}</span>
+        </div>
+    </div>
+</div>
+
+<ng-template #noSong>
+    <div class="player-container">
+        <div class="no-song">
+            <mat-icon
+                style="font-size: 48px; width: 48px; height: 48px; margin-bottom: 16px; color: var(--text-muted);">music_off</mat-icon>
+            <h3>No song selected</h3>
+            <p>Go to Songs to play something!</p>
+        </div>
+    </div>
+</ng-template>

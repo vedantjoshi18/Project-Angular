@@ -1,0 +1,33 @@
+.playlist-container {
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-card {
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.playlists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.playlist-item {
+    transition: transform 0.2s;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+}

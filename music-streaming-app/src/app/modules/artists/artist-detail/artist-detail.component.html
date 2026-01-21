@@ -1,0 +1,20 @@
+<div *ngIf="artist" class="artist-detail">
+    <div class="header">
+        <img [src]="artist.photoUrl" class="avatar">
+        <div class="info">
+            <h1>{{ artist.name }}</h1>
+            <p>{{ artist.bio }}</p>
+        </div>
+    </div>
+
+    <h2>Top Tracks</h2>
+    <mat-list>
+        <mat-list-item *ngFor="let song of songs">
+            <mat-icon matListItemIcon>music_note</mat-icon>
+            <div matListItemTitle>{{ song.title }}</div>
+            <div matListItemLine>{{ song.duration | date:'mm:ss' }}</div>
+        </mat-list-item>
+    </mat-list>
+
+    <button mat-button routerLink="/artists">Back to Artists</button>
+</div>

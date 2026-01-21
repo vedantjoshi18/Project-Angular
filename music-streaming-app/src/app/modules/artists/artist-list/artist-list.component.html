@@ -1,0 +1,8 @@
+<div class="artist-grid">
+    <mat-card *ngFor="let artist of artists" [routerLink]="['/artists', artist.id]" class="artist-card">
+        <img mat-card-image [src]="artist.photoUrl" alt="{{ artist.name }}">
+        <mat-card-content>
+            <h3>{{ artist.name }}</h3>
+        </mat-card-content>
+    </mat-card>
+</div>

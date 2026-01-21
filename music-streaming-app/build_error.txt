@@ -1,0 +1,99 @@
+
+> music-streaming-app@0.0.0 build
+> ng build
+
+Node.js version v25.2.1 detected.
+Odd numbered Node.js versions will not enter LTS status and should not be used for production. For more information, please see https://nodejs.org/en/about/previous-releases/.
+- Generating browser application bundles (phase: setup)...
+✔ Browser application bundle generation complete.
+✔ Browser application bundle generation complete.
+
+Error: src/app/modules/artists/artist-detail/artist-detail.component.ts:3:30 - error TS2307: Cannot find module '../../services/music.service' or its corresponding type declarations.
+
+3 import { MusicService } from '../../services/music.service';
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/modules/artists/artist-detail/artist-detail.component.ts:4:30 - error TS2307: Cannot find module '../../models/models' or its corresponding type declarations.
+
+4 import { Artist, Song } from '../../models/models';
+                               ~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/modules/artists/artist-detail/artist-detail.component.ts:18:17 - error NG2003: No suitable injection token for parameter 'musicService' of class 'ArtistDetailComponent'.
+  Consider using the @Inject decorator to specify an injection token.
+
+18         private musicService: MusicService
+                   ~~~~~~~~~~~~
+
+  src/app/modules/artists/artist-detail/artist-detail.component.ts:18:31
+    18         private musicService: MusicService
+                                     ~~~~~~~~~~~~
+    This type does not have a value, so it cannot be used as injection token.
+
+
+Error: src/app/modules/artists/artist-detail/artist-detail.component.ts:25:56 - error TS7006: Parameter 'allSongs' implicitly has an 'any' type.
+
+25                 this.musicService.getSongs().subscribe(allSongs => {
+                                                          ~~~~~~~~
+
+
+Error: src/app/modules/artists/artist-detail/artist-detail.component.ts:26:50 - error TS7006: Parameter 's' implicitly has an 'any' type.
+
+26                     this.songs = allSongs.filter(s => s.artistId === id);
+                                                    ~
+
+
+Error: src/app/modules/artists/artist-list/artist-list.component.ts:2:30 - error TS2307: Cannot find module '../../services/music.service' or its corresponding type declarations.
+
+2 import { MusicService } from '../../services/music.service';
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/modules/artists/artist-list/artist-list.component.ts:3:24 - error TS2307: Cannot find module '../../models/models' or its corresponding type declarations.
+
+3 import { Artist } from '../../models/models';
+                         ~~~~~~~~~~~~~~~~~~~~~
+
+
+Error: src/app/modules/artists/artist-list/artist-list.component.ts:13:25 - error NG2003: No suitable injection token for parameter 'musicService' of class 'ArtistListComponent'.
+  Consider using the @Inject decorator to specify an injection token.
+
+13     constructor(private musicService: MusicService) { }
+                           ~~~~~~~~~~~~
+
+  src/app/modules/artists/artist-list/artist-list.component.ts:13:39
+    13     constructor(private musicService: MusicService) { }
+                                             ~~~~~~~~~~~~
+    This type does not have a value, so it cannot be used as injection token.
+
+
+Error: src/app/modules/artists/artist-list/artist-list.component.ts:16:50 - error TS7006: Parameter 'data' implicitly has an 'any' type.
+
+16         this.musicService.getArtists().subscribe(data => this.artists = data);
+                                                    ~~~~
+
+
+Error: src/app/modules/artists/artists.module.ts:10:9 - error NG6001: The class 'ArtistListComponent' is listed in the declarations of the NgModule 'ArtistsModule', but is not a directive, a component, or a pipe. Either remove it from the NgModule's declarations, or add an appropriate Angular decorator.
+
+10         ArtistListComponent,
+           ~~~~~~~~~~~~~~~~~~~
+
+  src/app/modules/artists/artist-list/artist-list.component.ts:10:14
+    10 export class ArtistListComponent implements OnInit {
+                    ~~~~~~~~~~~~~~~~~~~
+    'ArtistListComponent' is declared here.
+
+
+Error: src/app/modules/artists/artists.module.ts:11:9 - error NG6001: The class 'ArtistDetailComponent' is listed in the declarations of the NgModule 'ArtistsModule', but is not a directive, a component, or a pipe. Either remove it from the NgModule's declarations, or add an appropriate Angular decorator.
+
+11         ArtistDetailComponent
+           ~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/modules/artists/artist-detail/artist-detail.component.ts:12:14
+    12 export class ArtistDetailComponent implements OnInit {
+                    ~~~~~~~~~~~~~~~~~~~~~
+    'ArtistDetailComponent' is declared here.
+
+
+

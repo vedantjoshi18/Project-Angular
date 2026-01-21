@@ -1,0 +1,15 @@
+<mat-toolbar>
+    <div class="logo">
+        <mat-icon>music_note</mat-icon> MusicApp
+    </div>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/songs" routerLinkActive="active">Songs</button>
+    <button mat-button routerLink="/artists" routerLinkActive="active">Artists</button>
+    <button mat-button routerLink="/playlists" routerLinkActive="active">Playlists</button>
+    <button mat-button routerLink="/now-playing" routerLinkActive="active">Now Playing</button>
+    <button mat-button routerLink="/feedback">Feedback</button>
+
+    <span class="user-info">
+        <mat-icon>person</mat-icon> {{ user.name }}
+    </span>
+</mat-toolbar>

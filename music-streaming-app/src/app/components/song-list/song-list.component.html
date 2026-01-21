@@ -1,0 +1,31 @@
+<div class="filter-container">
+    <mat-form-field appearance="outline" color="accent">
+        <mat-label>Filter by Genre</mat-label>
+        <mat-select [(ngModel)]="filteredGenre">
+            <mat-option value="">All Genres</mat-option>
+            <mat-option value="Synthwave">Synthwave</mat-option>
+            <mat-option value="Acoustic">Acoustic</mat-option>
+            <mat-option value="Pop">Pop</mat-option>
+        </mat-select>
+        <mat-icon matSuffix>filter_list</mat-icon>
+    </mat-form-field>
+</div>
+
+<div class="song-grid" [@staggerList]="(songs | genreFilter:filteredGenre).length">
+    <div class="song-card" *ngFor="let song of songs | genreFilter:filteredGenre" (click)="playSong(song)"
+        [class.playing]="currentSong?.id === song.id">
+
+        <div class="song-icon">
+            <mat-icon>{{ currentSong?.id === song.id ? 'equalizer' : 'music_note' }}</mat-icon>
+        </div>
+
+        <div class="song-info">
+            <h3>{{ song.title }}</h3>
+            <p>{{ artists.get(song.artistId) || 'Unknown Artist' }}</p>
+        </div>
+
+        <div class="song-meta">
+            <span>{{ song.duration | date:'mm:ss' }}</span>
+        </div>
+    </div>
+</div>
