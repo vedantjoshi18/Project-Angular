@@ -1,0 +1,38 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Angular Global Summit",
+      "date": "2026-05-15T09:00:00.000Z",
+      "category": "Technology",
+      "price": 299,
+      "description": "The biggest Angular conference of the year.",
+      "image": "https://material.angular.io/assets/img/examples/shiba2.jpg",
+      "isFeatured": true,
+      "status": "open"
+    },
+    {
+      "id": 2,
+      "title": "Jazz Night Live",
+      "date": "2026-06-20T19:00:00.000Z",
+      "category": "Music",
+      "price": 50,
+      "description": "Smooth jazz under the stars.",
+      "image": "https://material.angular.io/assets/img/examples/shiba2.jpg",
+      "isFeatured": false,
+      "status": "sold-out"
+    },
+    {
+      "id": 3,
+      "title": "Startup Pitch Day",
+      "date": "2026-07-10T10:00:00.000Z",
+      "category": "Business",
+      "price": 0,
+      "description": "Watch new startups pitch their ideas.",
+      "image": "https://material.angular.io/assets/img/examples/shiba2.jpg",
+      "isFeatured": true,
+      "status": "open"
+    }
+  ],
+  "bookings": []
+}
